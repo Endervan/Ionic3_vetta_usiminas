@@ -1,3 +1,41 @@
 .fundo_pesquisa_sastifacao {
   background-color: #ECEFF1;
 }
+
+.toolbar-background-md {
+  border-color: #b2b2b2;
+  background: #546E7A !important;
+}
+
+.toolbar-md {
+  padding: 4px;
+  min-height: 46px;
+}
+
+.toolbar-title-md {
+  font-size: 18px;
+  font-weight: 400 !important;
+  color: #F0F0F0;
+}
+
+.row_sastifacao{
+  background-color: #607D8B;
+  height: 82px;
+}
+.row_sastifacao span{
+  color: #FFF;
+  font-weight: 500;
+  font-size: 23px;
+}
+
+.row_sastifacao .searchbar-md .searchbar-search-icon{
+  width: 0;
+}
+
+.row_sastifacao .searchbar-md .searchbar-input {
+  padding: 6px 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #607D8B;
+  border-radius: 6px;
+}
