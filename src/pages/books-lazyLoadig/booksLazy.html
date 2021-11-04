@@ -1,0 +1,48 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title text-center>Angular Material</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <h2>Multi-row toolbar</h2>
+
+  <mat-toolbar color="primary">
+    <h2>Multi-row toolbar</h2>
+
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>Custom Toolbar</span>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+        <span>Second Line</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon">verified_user</mat-icon>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+        <span>Third Line</span>
+        <span class="example-spacer"></span>
+        <mat-icon class="example-icon">favorite</mat-icon>
+        <mat-icon class="example-icon">delete</mat-icon>
+      </mat-toolbar-row>
+    </mat-toolbar>
+
+  </mat-toolbar>
+
+    <h2>Basic datepicker</h2>
+
+
+    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+<!--  <form autocomplete="off" novalidate [formGroup]="cadastro" action="">-->
+    <app-input-date titulo="Data de Lançamento * " controlName="dtLacamento" [formGroup]="cadastro"></app-input-date>
+<!--  </form>-->
+
+
+</ion-content>
