@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BooksLazyModule} from "../pages/books-lazyLoadig/booksLazy.module";
 import {BooksPage} from "../pages/books/books";
 import {CamposModule} from "../shared/components/campos/campos.module";
+import {MaterialModule} from "../shared/material/material.module";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {CamposModule} from "../shared/components/campos/campos.module";
     BrowserAnimationsModule,
     IonicModule.forRoot(MyApp),
     BooksLazyModule,
-    CamposModule
+    CamposModule,
+    MaterialModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

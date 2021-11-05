@@ -6,6 +6,7 @@ import {AlertComponent} from "../../shared/components/campos/alert/alert.compone
 import {Alert} from "../../shared/components/models/alert";
 import {GenericaService} from "../../shared/components/services/generico.service";
 import {HomePage} from "../home/home";
+import {MatTableDataSource} from "@angular/material/table";
 
 
 @Component({
@@ -15,9 +16,21 @@ import {HomePage} from "../home/home";
 export class BooksPage {
   cadastro: FormGroup;
 
+
+  displayedColumns = ['avaliacao', 'ciclo', 'clientes', 'responsavel','status'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+
+
   constructor(private fb: FormBuilder,public genericaService: GenericaService,
               public dialog: MatDialog, private navCtrl: NavController,
               public navParams: NavParams) {
+  }
+
+  // filtragem lista
+  Filter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
 
   get f() {
@@ -60,3 +73,18 @@ export class BooksPage {
 
 
 }
+
+
+export interface ListaAvaliacoes {
+  avaliacao: number;
+  ciclo: number;
+  clientes: number;
+  responsavel: string;
+  status: string;
+}
+
+const ELEMENT_DATA: ListaAvaliacoes[] = [
+  {avaliacao: 2021, ciclo: 25, clientes:42, responsavel: 'Daniel',status:'Em Andamento'},
+  {avaliacao: 2020, ciclo: 24, clientes:6, responsavel: 'josue',status:'Concluida'},
+
+];
