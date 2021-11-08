@@ -17,13 +17,13 @@ import {Pesquisas} from "../../shared/models/pesquisas";
 })
 export class BooksPage {
   cadastro: FormGroup;
-  displayedColumns: string[] = ['avaliacao', 'ciclo', 'clientes', 'responsavel', 'status'];
+  displayedColumns: string[] = ['avaliacao', 'ciclo', 'clientes', 'responsavel', 'media', 'status'];
   dataSource: MatTableDataSource<Pesquisas>;
 
 
   constructor(private fb: FormBuilder, private pesquisa_S: PesquisaSastifacaoService,
               public genericaService: GenericaService,
-              public dialog: MatDialog, private navCtrl: NavController,
+              public dialog: MatDialog,
               public navParams: NavParams) {
 
   }
@@ -44,7 +44,7 @@ export class BooksPage {
       dtLacamento: ['', [Validators.required]],
     });
 
-    this.pesquisa_S.getAllPesquisas().subscribe(data =>{
+    this.pesquisa_S.getAllPesquisas().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       // this.dataSource.paginator = this.paginator;
       // this.dataSource.sort = this.sort;

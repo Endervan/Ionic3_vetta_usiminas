@@ -6,14 +6,16 @@
       "ciclo": 25,
       "clientes": 45,
       "responsavel": "Daniel",
-      "status": true
+      "media": 0,
+      "status": "Em Andamento"
     },{
       "id": 2,
       "avaliacao": 2020,
       "ciclo": 24,
       "clientes": 31,
       "responsavel": "Josue",
-      "status": false
+      "media": 10.5,
+      "status": "Concluida"
     }
   ]
 }

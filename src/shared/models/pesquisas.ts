@@ -3,5 +3,7 @@ export interface Pesquisas {
   ciclo?: number;
   clientes?: number;
   responsavel?: string;
-  status?: boolean;
+  media:number;
+  status?: string;
 }
+

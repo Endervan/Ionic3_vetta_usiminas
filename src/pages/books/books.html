@@ -6,53 +6,65 @@
 
 
 <ion-content class="fundo_pesquisa_sastifacao">
-  <ion-row align-items-center class="row_sastifacao" >
+  <ion-row align-items-center class="row_sastifacao">
     <ion-col col-9>
       <span padding-left>Pesquisas de Satisfação</span>
     </ion-col>
-    <ion-col col-3 >
-      <ion-searchbar  (keyup)="Filter($event.target.value)" placeholder="NOVA PESQUISA"></ion-searchbar>
+    <ion-col col-3>
+      <ion-searchbar (keyup)="Filter($event.target.value)" placeholder="NOVA PESQUISA"></ion-searchbar>
     </ion-col>
   </ion-row>
 
 
-  <ion-grid class="listagem_pesquisa_sastifacao" >
-        <mat-table [dataSource]="dataSource" >
+  <ion-grid class="listagem_pesquisa_sastifacao">
+    <mat-table [dataSource]="dataSource">
 
-          <ng-container  matColumnDef="avaliacao">
-            <mat-header-cell *matHeaderCellDef>Avaliação</mat-header-cell>
-            <mat-cell id="destaque" *matCellDef="let element"> {{element.avaliacao}} </mat-cell>
-          </ng-container>
+      <ng-container matColumnDef="avaliacao">
+        <mat-header-cell *matHeaderCellDef>Avaliação</mat-header-cell>
+        <mat-cell id="destaque" *matCellDef="let element"> {{element.avaliacao}} </mat-cell>
+      </ng-container>
 
-          <ng-container matColumnDef="ciclo">
-            <mat-header-cell *matHeaderCellDef>Ciclo</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.ciclo}} </mat-cell>
-          </ng-container>
+      <ng-container matColumnDef="ciclo">
+        <mat-header-cell *matHeaderCellDef>Ciclo</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.ciclo}} </mat-cell>
+      </ng-container>
 
-          <ng-container matColumnDef="clientes">
-            <mat-header-cell *matHeaderCellDef>Clientes</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.clientes}} </mat-cell>
-          </ng-container>
+      <ng-container matColumnDef="clientes">
+        <mat-header-cell *matHeaderCellDef>Clientes</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.clientes}} </mat-cell>
+      </ng-container>
 
-          <ng-container matColumnDef="responsavel">
-            <mat-header-cell *matHeaderCellDef>Responsável</mat-header-cell>
-            <mat-cell *matCellDef="let element"> {{element.responsavel}} </mat-cell>
-          </ng-container>
+      <ng-container matColumnDef="responsavel">
+        <mat-header-cell *matHeaderCellDef>Responsável</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.responsavel}} </mat-cell>
+      </ng-container>
 
-          <ng-container  matColumnDef="status">
-            <mat-header-cell text-center *matHeaderCellDef>Status</mat-header-cell>
-            <mat-cell text-end *matCellDef = "let element">
-              <button item-start id="status_button_andamento"mat-button>
-                {{element.status}}
-              </button>
-              <ion-icon name="ios-arrow-forward-outline"></ion-icon>
-            </mat-cell>
-          </ng-container>
+      <ng-container matColumnDef="media">
+        <mat-header-cell *matHeaderCellDef>Média</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.media || '--'}} </mat-cell>
+      </ng-container>
 
-          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-        </mat-table>
+      <ng-container matColumnDef="status">
+        <mat-header-cell text-center *matHeaderCellDef>Status</mat-header-cell>
+        <mat-cell text-end *matCellDef="let element">
 
+          <button *ngIf="element.status == 'Concluida' ;else andamento" item-start id="status_button_concluido" mat-button>
+            {{element.status}}
+          </button>
+
+         <ng-template #andamento>
+           <button  item-start id="status_button_andamento" mat-button>
+             {{element.status}}
+           </button>
+         </ng-template>
+
+          <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
 
 
   </ion-grid>
