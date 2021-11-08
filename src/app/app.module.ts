@@ -12,6 +12,7 @@ import {BooksLazyModule} from "../pages/books-lazyLoadig/booksLazy.module";
 import {BooksPage} from "../pages/books/books";
 import {CamposModule} from "../shared/components/campos/campos.module";
 import {MaterialModule} from "../shared/material/material.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -23,10 +24,11 @@ import {MaterialModule} from "../shared/material/material.module";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     BooksLazyModule,
     CamposModule,
-    MaterialModule
+    MaterialModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

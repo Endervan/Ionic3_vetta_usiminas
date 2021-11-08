@@ -5,7 +5,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "../../material/material.module";
 import {ValidarCamposService} from "./validar-campos.service";
 import {AlertComponent} from "./alert/alert.component";
-import {GenericaService} from "../services/generico.service";
+import {GenericaService} from "../../services/generico.service";
+import {PesquisaSastifacaoService} from "../../services/pesquisaSastifacao.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {GenericaService} from "../services/generico.service";
   ],
   providers: [
     ValidarCamposService,
-    GenericaService
+    GenericaService,
+    PesquisaSastifacaoService
   ]
 })
 export class CamposModule {

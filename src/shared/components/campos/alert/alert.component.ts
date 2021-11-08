@@ -1,7 +1,7 @@
 
 import {Component, Inject, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
-import {Alert} from "../../models/alert";
+import {Alert} from "../../../models/alert";
 
 @Component({
   selector: 'app-alerta',
