@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {AbstractControl, FormGroup} from "@angular/forms";
-import {ValidarCamposService} from "../validar-campos.service";
+import {ValidarCamposService} from "../../../services/validar-campos.service";
 
 @Component({
   selector: 'app-input-date',

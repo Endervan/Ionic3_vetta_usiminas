@@ -4,13 +4,12 @@ import {IonicApp, IonicErrorHandler, IonicModule} from 'ionic-angular';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {StatusBar} from '@ionic-native/status-bar';
 import {MyApp} from './app.component';
-import {DataProvider} from '../providers/data/data';
 
 import {HomePage} from '../pages/home/home';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {BooksLazyModule} from "../pages/books-lazyLoadig/booksLazy.module";
 import {BooksPage} from "../pages/books/books";
-import {CamposModule} from "../shared/components/campos/campos.module";
+import {SharedModule} from "../shared/shared.module";
 import {MaterialModule} from "../shared/material/material.module";
 import {HttpClientModule} from "@angular/common/http";
 
@@ -27,7 +26,7 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     BooksLazyModule,
-    CamposModule,
+    SharedModule,
     MaterialModule,
   ],
   bootstrap: [IonicApp],
@@ -40,7 +39,6 @@ import {HttpClientModule} from "@angular/common/http";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    DataProvider,
 
   ]
 })
