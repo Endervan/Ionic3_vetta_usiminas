@@ -11,7 +11,10 @@ module.exports = {
     dest: '{{WWW}}'
   },
   copyFonts: {
-    src: ['{{ROOT}}/node_modules/ionicons/dist/fonts/**/*', '{{ROOT}}/node_modules/ionic-angular/fonts/**/*'],
+    src: [
+      '{{ROOT}}/node_modules/ionicons/dist/fonts/**/*', '{{ROOT}}/node_modules/ionic-angular/fonts/**/*',
+      '{{ROOT}}/node_modules/font-awesome/fonts/**/*'
+    ],
     dest: '{{WWW}}/assets/fonts'
   },
   copyPolyfills: {
