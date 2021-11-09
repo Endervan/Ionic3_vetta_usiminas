@@ -1,10 +1,9 @@
 
 .fundo_pesquisa_sastifacao {
   background-color: #ECEFF1;
-}
-
-.fundo_pesquisa_sastifacao .scroll-content {
-  overflow-y: hidden;
+  .scroll-content {
+    overflow-y: hidden;
+  }
 }
 
 .toolbar-background-md {
@@ -49,9 +48,10 @@
 }
 
 
-.listagem_pesquisa_sastifacao{
+.listagem_pesquisa_sastifacao {
   margin-top: 8px;
-
+  overflow: auto;
+  max-height: 550px;
 
 
   .mat-table {
@@ -102,8 +102,9 @@
     font-style: italic;
   }
 
-  .mat-cell ion-icon{
-    margin-left: 15px;
+  .mat-cell ion-icon {
+    margin-left: 5px;
+    font-size: 1.4em;
   }
 
   .mat-header-row, {
@@ -111,6 +112,7 @@
     padding: 0 30px;
     min-height: 41px;
   }
+
   .mat-row {
     display: flex;
     border-bottom: 10px solid #ECEFF1;

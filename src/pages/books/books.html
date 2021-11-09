@@ -46,7 +46,7 @@
 
       <ng-container matColumnDef="status">
         <mat-header-cell text-center *matHeaderCellDef>Status</mat-header-cell>
-        <mat-cell text-end *matCellDef="let element">
+        <mat-cell  style="width: 50px" text-end *matCellDef="let element">
 
           <button *ngIf="element.status == 'Concluida' ;else andamento" item-start id="status_button_concluido" mat-button>
             {{element.status}}
@@ -66,6 +66,8 @@
       <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
 
+    <!--inclindo o controle de paginação.-->
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Itens por Pagínas"></mat-paginator>
 
   </ion-grid>
 
