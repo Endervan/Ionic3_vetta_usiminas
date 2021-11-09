@@ -21,7 +21,7 @@ import {PesquisaSastifacaoService} from "../../services/pesquisaSastifacao.servi
   ],
   exports: [
     InputDateComponent,
-    AlertComponent
+    AlertComponent,
   ],
   entryComponents: [
     AlertComponent

@@ -1,5 +1,6 @@
 
 <ion-header>
+  <button ion-button menuToggle>Toggle Menu</button>
 
   <ion-navbar color="primary">
     <ion-title text-center>Angular Material</ion-title>
@@ -34,15 +35,19 @@
 
   </mat-toolbar>
 
+
     <h2>Basic datepicker</h2>
-
-
-    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+    <input matInput [matDatepicker]="picker" placeholder="Insira uma data">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
 <!--  <form autocomplete="off" novalidate [formGroup]="cadastro" action="">-->
-    <app-input-date titulo="Data de Lançamento * " controlName="dtLacamento" [formGroup]="cadastro"></app-input-date>
+    <app-input-date titulo="Data de Lançamento * "></app-input-date>
 <!--  </form>-->
 
+  <h1>datetime ionic 3</h1>
+  <ion-item col-2>
+    <ion-label>MMMM</ion-label>
+    <ion-datetime  displayFormat="MMMM"></ion-datetime>
+  </ion-item>
 
 </ion-content>

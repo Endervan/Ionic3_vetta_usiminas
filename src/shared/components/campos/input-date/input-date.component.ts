@@ -22,8 +22,8 @@ import {ValidarCamposService} from "../validar-campos.service";
 export class InputDateComponent {
 
   @Input() titulo: string;
-  @Input() formGroup: FormGroup;
-  @Input() controlName: string;
+  @Input() formGroup?: FormGroup;
+  @Input() controlName?: string;
 
 
   constructor(public validacao: ValidarCamposService) {

@@ -1,12 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import { NavController, NavParams} from 'ionic-angular';
+import {IonicPage, NavController, NavParams} from 'ionic-angular';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+
 
 @Component({
   selector: 'page-books',
   templateUrl: 'booksLazy.html',
 })
-export class BooksPage implements OnInit {
+export class BooksLazyPage implements OnInit {
   cadastro: FormGroup;
   disableSelect = new FormControl(false);
 
@@ -18,9 +19,9 @@ export class BooksPage implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cadastro = this.fb.group({
-      dtLacamento: ['', [Validators.required]],
-    });
+    // this.cadastro = this.fb.group({
+    //   dtLacamento: ['', [Validators.required]],
+    // });
   }
 
 
