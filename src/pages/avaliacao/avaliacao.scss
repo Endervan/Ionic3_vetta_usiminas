@@ -27,6 +27,14 @@
       margin-right: 10px;
     }
 
+    .fa-rotate-290 {
+      -webkit-transform: rotate(290deg);
+      transform: rotate(290deg);
+      font-size: 15px;
+      color: #CFD8DC;
+      font-style: oblique;
+    }
+
   }
 
   @media (max-width: 600px) {
@@ -38,4 +46,74 @@
   .view-container {
     overflow: hidden;
   }
+
+  .button-round-md {
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    background-color: #CFD8DC;
+  }
+
+  .button-large-md {
+    color: #607D8B;
+    font-size: 14px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+  }
+
+  .mat-tab-header {
+    background: #FFFFFF;
+  }
+
+  .mat-tab-label {
+    color: rgba(0, 0, 0, .54);
+  }
+
+  .mat-tab-label:active {
+    border-bottom: 2px solid #607D8B;
+    color: #607D8B;
+  }
+
+  .mat-tab-link {
+    color: rgba(0, 0, 0, .84);
+  }
+
+  .fundo_geral {
+    background-color: #ECEFF1;
+  }
+
+  .fundo_geral h1 {
+    color: #212121;
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .mat-toolbar {
+    font-weight: 400;
+    font-size: 16px;
+
+    .mat-toolbar-row, .mat-toolbar-single-row {
+      height: 45px;
+    }
+
+    span {
+      color: #757575;
+    }
+
+    h3 {
+      color: #000000;
+      font-weight: 500;
+      margin-left: 13px;
+    }
+
+  }
+
+  .mat-form-field-wrapper {
+    margin-top: 18px;
+  }
+
+  .mat-form-field-infix {
+    font-size: 12px;
+  }
+
 }

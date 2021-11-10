@@ -12,6 +12,8 @@ import {BooksPage} from "../pages/books/books";
 import {SharedModule} from "../shared/shared.module";
 import {MaterialModule} from "../shared/material/material.module";
 import {HttpClientModule} from "@angular/common/http";
+import {AvaliacaoPageModule} from "../pages/avaliacao/avaliacao.module";
+import {CalculoDeMetaPageModule} from "../pages/calculo-de-meta/calculo-de-meta.module";
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule,
     IonicModule.forRoot(MyApp),
     BooksLazyModule,
+    AvaliacaoPageModule,
+    CalculoDeMetaPageModule,
     SharedModule,
     MaterialModule,
   ],

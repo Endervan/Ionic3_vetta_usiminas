@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Pesquisas} from "../models/pesquisas";
+import {Pesquisas} from "../shared/models/pesquisas";
 
 var httpOptions = {headers: new HttpHeaders({"Content-Type": "application/json"})};
 

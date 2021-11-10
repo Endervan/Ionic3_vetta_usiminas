@@ -3,11 +3,10 @@ import {InputDateComponent} from './components/campos/input-date/input-date.comp
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "./material/material.module";
-import {ValidarCamposService} from "./services/validar-campos.service";
+import {ValidarCamposService} from "../services/validar-campos.service";
 import {AlertComponent} from "./components/campos/alert/alert.component";
-import {GenericaService} from "./services/generico.service";
-import {PesquisaSastifacaoService} from "./services/pesquisaSastifacao.service";
-import {AvaliacaoPageModule} from "../pages/avaliacao/avaliacao.module";
+import {GenericaService} from "../services/generico.service";
+import {PesquisaSastifacaoService} from "../services/pesquisaSastifacao.service";
 
 @NgModule({
   declarations: [
@@ -17,7 +16,6 @@ import {AvaliacaoPageModule} from "../pages/avaliacao/avaliacao.module";
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    AvaliacaoPageModule,
     FormsModule,
     MaterialModule,
   ],

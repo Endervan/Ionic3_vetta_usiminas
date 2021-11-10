@@ -1,6 +1,8 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title padding-left margin-left>Pesquisas de Satisfação do Clientes</ion-title>
   </ion-navbar>
 </ion-header>
@@ -8,17 +10,59 @@
 <ion-content>
 
   <ion-row align-items-center class="avaliacao">
-    <ion-col col-9>
+    <ion-col col-5>
       <!-- Breadcrumb -->
       <ul class="breadcrumb">
-        <li><a href="#">Home</a> / </li>
-        <li><a href="#">Avaliação 2022</a> / </li>
+        <li><a href="#">Home</a> <i class="fa fa-minus fa-rotate-290" aria-hidden="true"></i></li>
+        <li><a href="#">Avaliação 2022</a> <i class="fa fa-minus fa-rotate-290" aria-hidden="true"></i></li>
         <li class="active">John Deere</li>
       </ul>
       <!-- end Breadcrumb -->
     </ion-col>
-    <ion-col col-3>
+    <ion-col col-7 text-right>
+      <button ion-button small round>Aguardando plano de reação</button>
+      <button ion-button large>Divulgar plano de reação</button>
+    </ion-col>
+    <ion-col col-12 class="fundo_geral">
+      <mat-tab-group>
 
+        <mat-tab label="Informações gerais">
+          <h1> Informações gerais</h1>
+        </mat-tab>
+
+        <mat-tab label="Preenchimento da avaliação">
+          <h1>Preenchimento da avaliação</h1>
+        </mat-tab>
+
+        <mat-tab label="Preenchimento da avaliação">
+          <h1>Preenchimento da avaliação</h1>
+        </mat-tab>
+
+        <mat-tab label="Plano de reação">
+          <h1>Plano de reação</h1>
+          <mat-toolbar>
+            <mat-toolbar-row>
+              <span>Data da avaliação:</span>
+              <h3>10/03/2022</h3>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+              <span>Data de recebimento do relatório:</span>
+              <h3>25/03/2022</h3>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+              <app-input-date titulo="Data de elaboração do plano"
+                              controlName="date"
+                              [formGroup]="elaboracao">
+              </app-input-date>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </mat-tab>
+
+
+        <mat-tab label="Relatórios">
+          <h1>Relatórios</h1>
+        </mat-tab>
+      </mat-tab-group>
     </ion-col>
   </ion-row>
 

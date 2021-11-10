@@ -10,8 +10,6 @@ import {BooksLazyPage} from "./booksLazy";
   ],
   imports: [
     MaterialModule,
-    // ReactiveFormsModule,
-    // FormsModule,
     IonicPageModule.forChild(BooksLazyPage),
     SharedModule,
   ],
