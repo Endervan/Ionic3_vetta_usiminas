@@ -1,0 +1,356 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title padding-left margin-left>Pesquisas de Satisfação do Clientes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row align-items-center class="calculo-meta">
+    <ion-col col-5>
+      <!-- Breadcrumb -->
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a> <i class="fa fa-minus fa-rotate-290" aria-hidden="true"></i></li>
+        <li class="active">Avaliação 2022</li>
+      </ul>
+      <!-- end Breadcrumb -->
+    </ion-col>
+    <ion-col col-7 text-right>
+      <button ion-button small round>Em planejamento</button>
+    </ion-col>
+    <ion-col class="fundo_geral">
+      <mat-tab-group >
+        <mat-tab label="{{info3}}" ion-col>
+          <h1>{{info3}}</h1>
+          <mat-toolbar>
+            <mat-toolbar-row>
+              <h3>Melhoria objetivada</h3>
+            </mat-toolbar-row>
+          </mat-toolbar>
+          <mat-table [dataSource]="dataSourceMelhoria">
+
+            <ng-container matColumnDef="melhoria">
+              <mat-header-cell *matHeaderCellDef></mat-header-cell>
+              <mat-cell id="destaque" *matCellDef="let element"> {{element.melhoria}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nota">
+              <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="comparacao">
+              <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+          </mat-table>
+
+          <mat-accordion class="titulo_acordion">
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Automotivo
+                  <button mat-fab>11</button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-toolbar>
+                <mat-toolbar-row>
+                  <h3>MÉDIA</h3>
+                  <h5>Nota anterior: <b>87,9</b></h5>
+                  <h5>Comparação com concorrente: <b>19,8</b></h5>
+                </mat-toolbar-row>
+              </mat-toolbar>
+
+              <mat-table [dataSource]="dataSourceGeral">
+                <ng-container matColumnDef="nome">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="ultimaParticipacao">
+                  <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="nota">
+                  <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="comparacao">
+                  <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+                </ng-container>
+                <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+              </mat-table>
+
+              <!--inclindo o controle de paginação.-->
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Itens por Pagínas"></mat-paginator>
+
+
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Autopartes
+                  <button mat-fab>9</button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-toolbar>
+                <mat-toolbar-row>
+                  <h3>MÉDIA</h3>
+                  <h5>Nota anterior: <b>87,9</b></h5>
+                  <h5>Comparação com concorrente: <b>19,8</b></h5>
+                </mat-toolbar-row>
+              </mat-toolbar>
+
+              <mat-table [dataSource]="dataSourceGeral">
+
+                <ng-container matColumnDef="nome">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ultimaParticipacao">
+                  <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="nota">
+                  <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="comparacao">
+                  <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+              </mat-table>
+
+
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Indústria
+                  <button mat-fab>9</button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-toolbar>
+                <mat-toolbar-row>
+                  <h3>MÉDIA</h3>
+                  <h5>Nota anterior: <b>87,9</b></h5>
+                  <h5>Comparação com concorrente: <b>19,8</b></h5>
+                </mat-toolbar-row>
+              </mat-toolbar>
+
+              <mat-table [dataSource]="dataSourceGeral">
+
+                <ng-container matColumnDef="nome">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ultimaParticipacao">
+                  <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="nota">
+                  <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="comparacao">
+                  <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+              </mat-table>
+
+
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Construção Infraestrutura
+                  <button mat-fab>12</button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-toolbar>
+                <mat-toolbar-row>
+                  <h3>MÉDIA</h3>
+                  <h5>Nota anterior: <b>87,9</b></h5>
+                  <h5>Comparação com concorrente: <b>19,8</b></h5>
+                </mat-toolbar-row>
+              </mat-toolbar>
+
+              <mat-table [dataSource]="dataSourceGeral">
+
+                <ng-container matColumnDef="nome">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ultimaParticipacao">
+                  <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="nota">
+                  <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="comparacao">
+                  <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+              </mat-table>
+
+
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Distribuição
+                  <button mat-fab>6</button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-toolbar>
+                <mat-toolbar-row>
+                  <h3>MÉDIA</h3>
+                  <h5>Nota anterior: <b>87,9</b></h5>
+                  <h5>Comparação com concorrente: <b>19,8</b></h5>
+                </mat-toolbar-row>
+              </mat-toolbar>
+
+              <mat-table [dataSource]="dataSourceGeral">
+
+                <ng-container matColumnDef="nome">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ultimaParticipacao">
+                  <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="nota">
+                  <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="comparacao">
+                  <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+              </mat-table>
+
+
+
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Globalizado
+                  <button mat-fab>11</button>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <mat-toolbar>
+                <mat-toolbar-row>
+                  <h3>MÉDIA</h3>
+                  <h5>Nota anterior: <b>87,9</b></h5>
+                  <h5>Comparação com concorrente: <b>19,8</b></h5>
+                </mat-toolbar-row>
+              </mat-toolbar>
+
+              <mat-table [dataSource]="dataSourceGeral">
+
+                <ng-container matColumnDef="nome">
+                  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="ultimaParticipacao">
+                  <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="nota">
+                  <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+                </ng-container>
+
+                <ng-container matColumnDef="comparacao">
+                  <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+              </mat-table>
+
+            </mat-expansion-panel>
+
+          </mat-accordion>
+
+
+        </mat-tab>
+
+
+        <mat-tab label="{{info1}}" ion-col>
+          <h1> {{info1}}</h1>
+        </mat-tab>
+
+        <mat-tab label="{{info2}}" ion-col>
+          <h1>{{info2}}</h1>
+        </mat-tab>
+
+
+        <mat-tab label="{{info4}}" ion-col>
+          <h1>{{info4}}</h1>
+          <mat-toolbar>
+            <mat-toolbar-row>
+              <span>Data da avaliação:</span>
+              <h3>10/03/2022</h3>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+              <span>Data de recebimento do relatório:</span>
+              <h3>25/03/2022</h3>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+              <app-input-date titulo="Data de elaboração do plano"
+                              controlName="date"
+                              [formGroup]="elaboracao">
+              </app-input-date>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </mat-tab>
+
+
+      </mat-tab-group>
+    </ion-col>
+  </ion-row>
+
+</ion-content>
