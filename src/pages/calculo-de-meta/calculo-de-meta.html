@@ -22,18 +22,20 @@
       <button ion-button small round>Em planejamento</button>
     </ion-col>
     <ion-col class="fundo_geral">
-      <mat-tab-group >
+      <mat-tab-group>
 
-        <mat-tab label="{{info1}}" >
-          <h1> {{info1}}</h1>
-         <page-informacoes-gerais></page-informacoes-gerais>
-        </mat-tab>
+          <mat-tab label="{{info1}}">
+<!--            <h1> {{info1}}</h1>-->
+            <page-informacoes-gerais></page-informacoes-gerais>
+          </mat-tab>
 
-        <mat-tab label="{{info2}}" >
+
+        <mat-tab label="{{info2}}">
           <h1>{{info2}}</h1>
+          <page-selecao-clientes></page-selecao-clientes>
         </mat-tab>
 
-        <mat-tab label="{{info3}}" >
+        <mat-tab label="{{info3}}">
           <h1>{{info3}}</h1>
           <mat-toolbar>
             <mat-toolbar-row>
@@ -80,11 +82,13 @@
               <mat-table [dataSource]="dataSourceGeral">
                 <ng-container matColumnDef="nome">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="ultimaParticipacao">
                   <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                  <mat-cell *matCellDef="let element"><i class="fa fa-circle"
+                                                         aria-hidden="true"></i> {{element.ultimaParticipacao}}
+                  </mat-cell>
                 </ng-container>
                 <ng-container matColumnDef="nota">
                   <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
@@ -99,8 +103,8 @@
               </mat-table>
 
               <!--inclindo o controle de paginação.-->
-              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Itens por Pagínas"></mat-paginator>
-
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                             aria-label="Itens por Pagínas"></mat-paginator>
 
 
             </mat-expansion-panel>
@@ -123,12 +127,14 @@
 
                 <ng-container matColumnDef="nome">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="ultimaParticipacao">
                   <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                  <mat-cell *matCellDef="let element"><i class="fa fa-circle"
+                                                         aria-hidden="true"></i> {{element.ultimaParticipacao}}
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="nota">
@@ -144,7 +150,6 @@
                 <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
               </mat-table>
-
 
 
             </mat-expansion-panel>
@@ -167,12 +172,14 @@
 
                 <ng-container matColumnDef="nome">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="ultimaParticipacao">
                   <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                  <mat-cell *matCellDef="let element"><i class="fa fa-circle"
+                                                         aria-hidden="true"></i> {{element.ultimaParticipacao}}
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="nota">
@@ -188,7 +195,6 @@
                 <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
               </mat-table>
-
 
 
             </mat-expansion-panel>
@@ -211,12 +217,14 @@
 
                 <ng-container matColumnDef="nome">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="ultimaParticipacao">
                   <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                  <mat-cell *matCellDef="let element"><i class="fa fa-circle"
+                                                         aria-hidden="true"></i> {{element.ultimaParticipacao}}
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="nota">
@@ -232,7 +240,6 @@
                 <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
               </mat-table>
-
 
 
             </mat-expansion-panel>
@@ -255,12 +262,14 @@
 
                 <ng-container matColumnDef="nome">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="ultimaParticipacao">
                   <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                  <mat-cell *matCellDef="let element"><i class="fa fa-circle"
+                                                         aria-hidden="true"></i> {{element.ultimaParticipacao}}
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="nota">
@@ -276,7 +285,6 @@
                 <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
                 <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
               </mat-table>
-
 
 
             </mat-expansion-panel>
@@ -299,12 +307,14 @@
 
                 <ng-container matColumnDef="nome">
                   <mat-header-cell *matHeaderCellDef></mat-header-cell>
-                  <mat-cell  *matCellDef="let element"> {{element.nome}} </mat-cell>
+                  <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="ultimaParticipacao">
                   <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-                  <mat-cell *matCellDef="let element"> <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}} </mat-cell>
+                  <mat-cell *matCellDef="let element"><i class="fa fa-circle"
+                                                         aria-hidden="true"></i> {{element.ultimaParticipacao}}
+                  </mat-cell>
                 </ng-container>
 
                 <ng-container matColumnDef="nota">

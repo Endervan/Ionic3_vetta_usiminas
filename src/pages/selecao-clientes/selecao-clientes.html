@@ -1,0 +1,413 @@
+<!-- Cabeçalho -->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Seleção de Clientes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- Conteúdo da página -->
+<ion-content class="backgroundAba">
+  <!-- Cabeçalho-->
+  <ion-grid>
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <ion-col col-11>
+        <h3 color="primary" class="texto-cabecalho">Seleção de clientes</h3>
+      </ion-col>
+      <ion-col col-1>
+        <!--<button ion-button id="botao-salvar">Salvar</button>-->
+        <button mat-button>Salvar</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Campos de filtro -->
+  <ion-grid class="backgroundCampo">
+    <!-- Filtro de nome -->
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <ion-col class="ion-float-left" col-4>
+        <ion-input
+          type="text"
+          class="inputFieldNome"
+          placeholder="Nome"
+        ></ion-input>
+      </ion-col>
+
+      <!-- Filtro de setor -->
+      <ion-col col-3>
+        <ion-select
+          placeholder="Setor"
+          class="inputSelectSetor"
+          multiple="false"
+          interface="popover"
+        >
+          <ion-option>Auto</ion-option>
+          <ion-option>Siderurgia</ion-option>
+          <ion-option>Metalurgia</ion-option>
+        </ion-select>
+      </ion-col>
+
+      <!-- Filtro de data da última avaliação -->
+      <ion-col col-3>
+        <ion-item>
+          <ion-datetime
+            no-lines
+            displayFormat="DD MMMM YYYY"
+            pickerFormat="DD MMMM YYYY"
+            placeholder="Última avaliação"
+          >
+          </ion-datetime>
+        </ion-item>
+      </ion-col>
+
+      <!-- Botão de limpar seleção de filtros -->
+      <ion-col col-1>
+        <button ion-button class="botao-limpar" no-padding clear>Limpar</button>
+      </ion-col>
+
+      <!-- Botão de aplicar os filtros selecionados -->
+      <ion-col col-1>
+        <button ion-button class="botao-filtrar" no-padding clear>
+          Filtrar
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Campos de filtro alternativos - mantidos em collapse -->
+    <ion-row justify-content-left align-items-center style="height: 100%">
+      <!-- Filtro de última nota com valor min e max -->
+      <ion-col col-2>
+        <ion-label>Última nota</ion-label>
+        <br />
+        <ion-row>
+          <ion-col col-4 no-padding>
+            <ion-input
+              class="background-filtros"
+              type="text"
+              placeholder="Mínimo"
+            ></ion-input>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-input
+              class="background-filtros"
+              type="text"
+              placeholder="Máximo"
+            ></ion-input>
+          </ion-col>
+        </ion-row>
+
+        <!-- Filtro de volume em toneladas com valor min e max -->
+      </ion-col>
+      <ion-col col-2>
+        <ion-label>Volume (t)</ion-label>
+        <br />
+        <ion-row>
+          <ion-col col-4 no-padding>
+            <ion-input
+              class="background-filtros"
+              type="text"
+              placeholder="Mínimo"
+            ></ion-input>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-input
+              class="background-filtros"
+              type="text"
+              placeholder="Máximo"
+            ></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+
+      <!-- Filtro de faturamento em reais com valor min e max -->
+      <ion-col col-2>
+        <ion-label>Faturamento</ion-label>
+        <br />
+        <ion-row>
+          <ion-col col-4 no-padding>
+            <ion-input
+              class="background-filtros"
+              type="text"
+              placeholder="Mínimo"
+            ></ion-input>
+          </ion-col>
+          <ion-col col-4 no-padding>
+            <ion-input
+              class="background-filtros"
+              type="text"
+              placeholder="Máximo"
+            ></ion-input>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- Tabela de selecionados -->
+  <ion-grid class="backgroundCampo">
+    <!-- Título da tabela de Selecionados -->
+    <ion-row class="borda-tabela">
+      <ion-label id="label-tabela">Selecionados</ion-label>
+    </ion-row>
+    <!-- Classificadores das colunas -->
+    <ion-row class="borda-tabela">
+      <ion-col>
+        <ion-label>Nome</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Setor</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Volume</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Faturamento (R$)</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Última participação</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Última nota</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Remover</ion-label>
+      </ion-col>
+    </ion-row>
+    <!-- Elementos presentes na tabela -->
+    <ion-row class="borda-tabela">
+      <ion-col>
+        <p ion-text>Fiat</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>Auto</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>2020</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>90,0</p>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear (click)="criarPromptRemover()">
+          <ion-icon color="danger" name="close"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <!-- Elementos presentes na tabela -->
+    <ion-row class="borda-tabela">
+      <ion-col>
+        <p ion-text>Jeep</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>Auto</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>2019</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>91,2</p>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear (click)="criarPromptRemover()">
+          <ion-icon color="danger" name="close"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <!-- Elementos presentes na tabela -->
+    <ion-row class="borda-tabela">
+      <ion-col>
+        <p ion-text>ACME</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>Siderurgia</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>2020</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>90,0</p>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear (click)="criarPromptRemover()">
+          <ion-icon color="danger" name="close"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <!-- Elementos presentes na tabela -->
+    <ion-row class="borda-tabela">
+      <ion-col>
+        <p ion-text>Honda</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>Auto</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>2020</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>78,0</p>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear (click)="criarPromptRemover()">
+          <ion-icon color="danger" name="close"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <!-- Elementos presentes na tabela -->
+    <ion-row>
+      <ion-col>
+        <p ion-text>GM</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>Auto</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>2020</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>92,9</p>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear (click)="criarPromptRemover()">
+          <ion-icon color="danger" name="close"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid class="backgroundCampo">
+    <ion-row>
+      <ion-label id="label-tabela">Não selecionados</ion-label>
+    </ion-row>
+    <ion-row class="borda-tabela">
+      <ion-col no-margin>
+        <ion-label>Nome</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Setor</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Volume</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Faturamento (R$)</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Última participação</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Última nota</ion-label>
+      </ion-col>
+      <ion-col>
+        <ion-label>Justificativa</ion-label>
+      </ion-col>
+      <ion-col>
+        <!-- espaço em branco para representar uma coluna para o botão de exibir
+        o de justificativa-->
+      </ion-col>
+      <ion-col>
+        <ion-label>Selecionar</ion-label>
+      </ion-col>
+    </ion-row>
+    <ion-row class="borda-tabela">
+      <ion-col>
+        <p ion-text>Fiat</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>Auto</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>2020</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>90,0</p>
+      </ion-col>
+      <ion-col>
+        <ion-textarea
+          type="text"
+          rows="1"
+          maxLength="500"
+          placeholder="Justificativa"
+        ></ion-textarea>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear>
+          <ion-icon color="dark" name="chatboxes"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear>
+          <ion-icon color="secondary" name="add"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p ion-text>Fiat</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>Auto</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>0.000.000,00</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>2020</p>
+      </ion-col>
+      <ion-col>
+        <p ion-text>90,0</p>
+      </ion-col>
+      <ion-col>
+        <ion-textarea type="text" placeholder="Justificativa"></ion-textarea>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear>
+          <ion-icon color="dark" name="chatboxes"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button icon-only ion-button clear>
+          <ion-icon color="secondary" name="add"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,6 +1,13 @@
-page-informações-gerais {
+.alturaContext{
+  min-height: 497px;
+  overflow: hidden;
+  .scroll-content {
+    overflow-y: hidden;
+  }
+  .mat-tab-body-content {
+   overflow: inherit;
+  }
 }
-
 #botaoSalvar {
   height: 32px;
   padding-top: 0px;
