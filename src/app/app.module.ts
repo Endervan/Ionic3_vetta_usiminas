@@ -46,7 +46,7 @@ import {SelecaoClientesPageModule} from "../pages/selecao-clientes/selecao-clien
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
 
-  ]
+  ],
 })
 export class AppModule {
 }

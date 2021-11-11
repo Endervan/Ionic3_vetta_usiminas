@@ -22,7 +22,8 @@ i[class^="fa-"], ion-icon[class^="fa-"] {
 }
 
 .scroll-content {
-  right: -17px;
+  right: -17px !important;
+  overflow-y: auto;
 }
 
 //.scroll-content {
