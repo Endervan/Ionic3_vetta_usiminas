@@ -11,171 +11,157 @@
     width: 100%;
   }
 
-  /* Breadcrumb */
-  .breadcrumb {
-    padding: 10px 15px;
-    list-style: none;
+
+  .fa-rotate-290 {
+    -webkit-transform: rotate(290deg);
+    transform: rotate(290deg);
+    font-size: 15px;
+    color: #CFD8DC;
+    font-style: oblique;
+  }
+
+}
+
+@media (max-width: 600px) {
+  ul {
+    margin-left: -30%;
+  }
+}
+
+.view-container {
+  overflow: hidden;
+}
+
+.button-round-md {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 400;
+  background-color: #CFD8DC;
+}
+
+.button-round-md:hover {
+  background-color: #CFD8DC;
+}
+
+.button-large-md {
+  color: #607D8B;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+.mat-tab-header {
+  background: #FFFFFF;
+}
+
+.mat-tab-label {
+  color: rgba(0, 0, 0, .54);
+}
+
+.mat-tab-label:active {
+  border-bottom: 2px solid #607D8B;
+  color: #607D8B;
+}
+
+.mat-tab-link {
+  color: rgba(0, 0, 0, .84);
+}
+
+.fundo_geral {
+  background-color: #ECEFF1;
+}
+
+.fundo_geral h1 {
+  color: #212121;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.mat-toolbar {
+  background: #FFFFFF;
+  font-weight: 400;
+  font-size: 16px;
+
+  .mat-toolbar-row, .mat-toolbar-single-row {
     height: 40px;
-    font-weight: normal;
-    color: #FFF;
-    overflow: hidden;
-
-    li {
-      display: inline-block;
-      color: #FFF;
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    a {
-      font-size: 14px;
-      font-weight: 400;
-      color: #CFD8DC;
-      text-decoration: none;
-      margin-right: 10px;
-    }
-
-    .fa-rotate-290 {
-      -webkit-transform: rotate(290deg);
-      transform: rotate(290deg);
-      font-size: 15px;
-      color: #CFD8DC;
-      font-style: oblique;
-    }
-
   }
 
-  @media (max-width: 600px) {
-    ul {
-      margin-left: -30%;
-    }
+  span {
+    color: #757575;
   }
 
-  .view-container {
-    overflow: hidden;
+  h3 {
+    color: #212121;
+    font-size: 16px;
   }
 
-  .button-round-md {
-    color: #000000;
+}
+
+.mat-form-field-wrapper {
+  margin-top: 18px;
+}
+
+.mat-form-field-infix {
+  font-size: 12px;
+}
+
+.mat-table {
+  margin-bottom: 10px;
+}
+
+.mat-row:last-child {
+  font-weight: 700;
+}
+
+
+.titulo_acordion {
+
+  .mat-row:last-child {
+    font-weight: 400;
+  }
+
+  .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
+    background-color: #607D8B;
+    width: 40px;
+    height: 35px;
+    position: absolute;
+    right: 44px;
+    top: 9px;
+  }
+
+  .mat-fab .mat-button-wrapper {
     font-size: 12px;
     font-weight: 400;
-    background-color: #CFD8DC;
+    line-height: 7px;
   }
 
-  .button-round-md:hover {
-    background-color: #CFD8DC;
+  h5 {
+    color: #757575;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin-left: 30px !important;
+
+    b {
+      color: #000000;
+      margin-left: 15px;
+
+    }
+
   }
 
-  .button-large-md {
-    color: #607D8B;
-    font-size: 14px;
-    border-radius: 3px;
-    background-color: #FFFFFF;
+  .mat-expansion-panel-header {
+    position: relative;
   }
 
-  .mat-tab-header {
-    background: #FFFFFF;
-  }
-
-  .mat-tab-label {
-    color: rgba(0, 0, 0, .54);
-  }
-
-  .mat-tab-label:active {
-    border-bottom: 2px solid #607D8B;
-    color: #607D8B;
-  }
-
-  .mat-tab-link {
-    color: rgba(0, 0, 0, .84);
-  }
-
-  .fundo_geral {
-    background-color: #ECEFF1;
-  }
-
-  .fundo_geral h1 {
-    color: #212121;
-    font-weight: 400;
-    font-size: 20px;
+  .mat-expansion-panel-header-title {
+    margin: 10px;
+    font-size: 16px;
   }
 
   .mat-toolbar {
-    background: #FFFFFF;
-    font-weight: 400;
-    font-size: 16px;
-
-    .mat-toolbar-row, .mat-toolbar-single-row {
-      height: 40px;
-    }
-
-    span {
-      color: #757575;
-    }
-
-    h3 {
-      color: #212121;
-      font-size: 16px;
-    }
-
+     background: #FFFFFF;
   }
-
-  .mat-form-field-wrapper {
-    margin-top: 18px;
-  }
-
-  .mat-form-field-infix {
-    font-size: 12px;
-  }
-
-  .mat-table {
-    margin-bottom: 10px;
-  }
-
-  .mat-row:last-child {
-    font-weight: 700;
-  }
-
-
-  .titulo_acordion {
-
-    .mat-row:last-child {
-      font-weight: 400;
-    }
-
-    .mat-fab.mat-accent, .mat-mini-fab.mat-accent, .mat-raised-button.mat-accent {
-      background-color: #607D8B;
-      width: 40px;
-      height: 35px;
-      position: absolute;
-      right: 44px;
-      top: 9px;
-    }
-
-    .mat-fab .mat-button-wrapper {
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 7px;
-    }
-
-    h5 {
-      color: #757575;
-      font-size: 16px;
-      font-weight: 400;
-      margin-left: 30px;
-
-      b {
-        color: #000000;
-        margin-left: 15px;
-
-      }
-
-    }
-
-    .mat-expansion-panel-header {
-      position: relative;
-    }
-  }
-
-
 }
+
+
+

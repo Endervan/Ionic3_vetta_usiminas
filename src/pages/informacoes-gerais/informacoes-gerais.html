@@ -1,0 +1,93 @@
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row justify-content-left align-items-center style="height: 100%">
+      <ion-col col-7>
+        <h6 id="titulo" no-margin>Informações Gerais</h6>
+      </ion-col>
+      <ion-col col-5 text-right>
+        <button ion-button class="botaoSalvar">Salvar</button></ion-col
+      >
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="gridSecundaria">
+    <!-- linha de inputs (ano, ciclo e responsável) -->
+    <ion-row justify-content-left align-items-center style="height: 100%">
+      <!-- ano -->
+      <ion-col col-3>
+        <ion-item class="inputs">
+          <ion-datetime
+            placeholder="Ano Da Avaliação"
+            displayFormat="YYYY"
+            class="yearDisplay"
+            min="1900"
+            max="2099"
+          ></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <!-- ciclo -->
+      <ion-col col-2>
+        <ion-item class="inputs">
+          <ion-input type="number" placeholder="Ciclo"></ion-input>
+        </ion-item>
+      </ion-col>
+      <!-- responsável -->
+      <ion-col>
+        <ion-select
+          placeholder="Responsável"
+          multiple="false"
+          interface="popover"
+          class="inputs"
+        >
+          <ion-option>Daniel Branjioni</ion-option>
+          <ion-option>Fulano</ion-option>
+          <ion-option>Beutrano</ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <!-- linha com o input de observações -->
+    <ion-row>
+      <ion-col col-10>
+        <ion-item class="inputObservacoes" no-padding>
+          <ion-textarea
+            type="text"
+            class="cicloDisplay"
+            placeholder="Observações"
+            floating
+            rows="6"
+          ></ion-textarea>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <!-- botao de editar -->
+    <ion-row>
+      <ion-col col-7>
+        <!-- <button ion-button class="botaoEditar" clear no-padding>
+              &emsp; <ion-icon name="create"></ion-icon> &emsp; Editar Perguntas
+              da Avaliação &emsp;
+            </button> -->
+      </ion-col>
+    </ion-row>
+    <!-- botao de finalzar planejamento -->
+    <ion-row>
+      <ion-col col-4>
+        <button ion-button no-padding>
+          &emsp;
+          <ion-icon name="checkmark" style="align-self: left"></ion-icon>&emsp;
+          Finalizar Planejamento &emsp;
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-item-divider></ion-item-divider>
+    </ion-row>
+    <!-- botao de excluir -->
+    <ion-row>
+      <ion-col col-5>
+        <button ion-button clear class="botaoExcluir" color="primary">
+          Excluir Avaliação
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -3,39 +3,7 @@
   height: 82px;
 
 
-  /* Breadcrumb */
-  .breadcrumb {
-    padding: 10px 15px;
-    list-style: none;
-    height: 40px;
-    font-weight: normal;
-    color: #FFF;
-    overflow: hidden;
 
-    li {
-      display: inline-block;
-      color: #FFF;
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    a {
-      font-size: 14px;
-      font-weight: 400;
-      color: #CFD8DC;
-      text-decoration: none;
-      margin-right: 10px;
-    }
-
-    .fa-rotate-290 {
-      -webkit-transform: rotate(290deg);
-      transform: rotate(290deg);
-      font-size: 15px;
-      color: #CFD8DC;
-      font-style: oblique;
-    }
-
-  }
 
   @media (max-width: 600px) {
     ul {

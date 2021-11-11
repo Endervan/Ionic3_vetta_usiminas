@@ -5,14 +5,17 @@ import {SharedModule} from "../../shared/shared.module";
 import {BooksLazyPage} from "./booksLazy";
 
 @NgModule({
-  declarations: [
-    BooksLazyPage,
-  ],
-  imports: [
-    MaterialModule,
-    IonicPageModule.forChild(BooksLazyPage),
-    SharedModule,
-  ],
+    declarations: [
+        BooksLazyPage,
+    ],
+    imports: [
+        MaterialModule,
+        IonicPageModule.forChild(BooksLazyPage),
+        SharedModule,
+    ],
+    exports: [
+        BooksLazyPage
+    ]
 })
 export class BooksLazyModule {
 }
