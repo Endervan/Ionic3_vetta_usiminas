@@ -14,6 +14,7 @@ import {MaterialModule} from "../shared/material/material.module";
 import {HttpClientModule} from "@angular/common/http";
 import {AvaliacaoPageModule} from "../pages/avaliacao/avaliacao.module";
 import {CalculoDeMetaPageModule} from "../pages/calculo-de-meta/calculo-de-meta.module";
+import {SelecaoClientesPageModule} from "../pages/selecao-clientes/selecao-clientes.module";
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import {CalculoDeMetaPageModule} from "../pages/calculo-de-meta/calculo-de-meta.
     BooksLazyModule,
     AvaliacaoPageModule,
     CalculoDeMetaPageModule,
+    SelecaoClientesPageModule,
     SharedModule,
     MaterialModule,
   ],
