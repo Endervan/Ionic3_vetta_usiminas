@@ -163,6 +163,10 @@
   .mat-toolbar {
     background: #FFFFFF;
   }
+
+  .mat-header-row, .mat-row {
+    border-bottom-width: 2px;
+  }
 }
 
 .calculoMetas {

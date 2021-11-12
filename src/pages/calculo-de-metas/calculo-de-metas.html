@@ -89,7 +89,7 @@
         </mat-toolbar-row>
       </mat-toolbar>
 
-      <mat-table [dataSource]="dataSourceGeral">
+      <mat-table [dataSource]="dataSourceGeral2">
 
         <ng-container matColumnDef="nome">
           <mat-header-cell *matHeaderCellDef></mat-header-cell>
@@ -98,8 +98,8 @@
 
         <ng-container matColumnDef="ultimaParticipacao">
           <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element"><i class="fa fa-circle"
-                                                 aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-cell *matCellDef="let element">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
 
@@ -113,8 +113,12 @@
           <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
         </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+        <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
+
+        <!--inclindo o controle de paginação.-->
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                       aria-label="Itens por Pagínas"></mat-paginator>
       </mat-table>
 
 
@@ -160,6 +164,10 @@
 
         <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+
+        <!--inclindo o controle de paginação.-->
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                       aria-label="Itens por Pagínas"></mat-paginator>
       </mat-table>
 
 
@@ -205,6 +213,10 @@
 
         <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+
+        <!--inclindo o controle de paginação.-->
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                       aria-label="Itens por Pagínas"></mat-paginator>
       </mat-table>
 
 
@@ -250,6 +262,10 @@
 
         <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+
+        <!--inclindo o controle de paginação.-->
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                       aria-label="Itens por Pagínas"></mat-paginator>
       </mat-table>
 
 
@@ -295,6 +311,9 @@
 
         <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+        <!--inclindo o controle de paginação.-->
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+                       aria-label="Itens por Pagínas"></mat-paginator>
       </mat-table>
 
     </mat-expansion-panel>
