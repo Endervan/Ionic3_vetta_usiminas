@@ -1,23 +1,26 @@
-import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
-import { CalculoDeMetaPage } from './calculo-de-meta';
+import {NgModule} from '@angular/core';
+import {IonicPageModule} from 'ionic-angular';
 import {MaterialModule} from "../../shared/material/material.module";
 import {SharedModule} from "../../shared/shared.module";
 import {AvaliacaoPageModule} from "../avaliacao/avaliacao.module";
 import {InformacoesGeraisPageModule} from "../informacoes-gerais/informacoes-gerais.module";
 import {SelecaoClientesPageModule} from "../selecao-clientes/selecao-clientes.module";
+import {CalculoDeMetasPageModule} from "../calculo-de-metas/calculo-de-metas.module";
+import {AvaliacaoPesquisaPage} from "./avaliacao-pesquisa";
 
 @NgModule({
   declarations: [
-    CalculoDeMetaPage,
+    AvaliacaoPesquisaPage,
   ],
   imports: [
-    IonicPageModule.forChild(CalculoDeMetaPage),
+    IonicPageModule.forChild(AvaliacaoPesquisaPage),
     MaterialModule,
     SharedModule,
     AvaliacaoPageModule,
     InformacoesGeraisPageModule,
     SelecaoClientesPageModule,
+    CalculoDeMetasPageModule,
   ],
 })
-export class CalculoDeMetaPageModule {}
+export class AvaliacaoPesquisaPageModule{
+}

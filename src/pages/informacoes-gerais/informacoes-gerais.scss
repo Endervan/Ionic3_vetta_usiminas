@@ -1,11 +1,12 @@
 .alturaContext{
   min-height: 482px;
   overflow: hidden;
+  //.mat-tab-body-content {
+  // overflow: inherit;
+  //}
+
   .scroll-content {
-    overflow-y: hidden;
-  }
-  .mat-tab-body-content {
-   overflow: inherit;
+    right: 10px !important;
   }
 }
 #botaoSalvar {

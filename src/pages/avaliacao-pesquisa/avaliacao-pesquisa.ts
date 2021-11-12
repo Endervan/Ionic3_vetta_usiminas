@@ -9,10 +9,10 @@ import {MatSort} from "@angular/material/sort";
 
 @IonicPage()
 @Component({
-  selector: 'page-calculo-de-meta',
-  templateUrl: 'calculo-de-meta.html',
+  selector: 'page-avaliacao-pesquisa',
+  templateUrl: 'avaliacao-pesquisa.html',
 })
-export class CalculoDeMetaPage {
+export class AvaliacaoPesquisaPage {
   info1: string = 'Informações gerais';
   info2: string = 'Seleção de clientes';
   info3: string = 'Cálculo de meta';

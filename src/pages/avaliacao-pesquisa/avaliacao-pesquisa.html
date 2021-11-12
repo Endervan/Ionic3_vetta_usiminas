@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title padding-left margin-left>Pesquisas de Satisfação do Clientes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row align-items-center class="calculo-meta">
+    <ion-col col-5>
+      <!-- Breadcrumb -->
+      <ul class="breadcrumb">
+        <li><a href="#">Home</a> <i class="fa fa-minus fa-rotate-290" aria-hidden="true"></i></li>
+        <li class="active">Avaliação 2022</li>
+      </ul>
+      <!-- end Breadcrumb -->
+    </ion-col>
+    <ion-col col-7 text-right>
+      <button ion-button small round>Em planejamento</button>
+    </ion-col>
+    <ion-col class="fundo_geral">
+      <mat-tab-group>
+
+        <mat-tab label="{{info1}}">
+          <page-informacoes-gerais></page-informacoes-gerais>
+        </mat-tab>
+
+        <mat-tab label="{{info2}}">
+          <page-selecao-clientes></page-selecao-clientes>
+        </mat-tab>
+
+        <mat-tab label="{{info3}}">
+          <page-calculo-de-metas></page-calculo-de-metas>
+
+        </mat-tab>
+
+        <mat-tab label="{{info4}}">
+          <h1>{{info4}}</h1>
+          <mat-toolbar>
+            <mat-toolbar-row>
+              <span>Data da avaliação:</span>
+              <h3>10/03/2022</h3>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+              <span>Data de recebimento do relatório:</span>
+              <h3>25/03/2022</h3>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+              <app-input-date titulo="Data de elaboração do plano"
+                              controlName="date"
+                              [formGroup]="elaboracao">
+              </app-input-date>
+            </mat-toolbar-row>
+          </mat-toolbar>
+        </mat-tab>
+
+
+      </mat-tab-group>
+    </ion-col>
+  </ion-row>
+
+</ion-content>

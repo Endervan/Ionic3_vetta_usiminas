@@ -13,7 +13,7 @@ import {SharedModule} from "../shared/shared.module";
 import {MaterialModule} from "../shared/material/material.module";
 import {HttpClientModule} from "@angular/common/http";
 import {AvaliacaoPageModule} from "../pages/avaliacao/avaliacao.module";
-import {CalculoDeMetaPageModule} from "../pages/calculo-de-meta/calculo-de-meta.module";
+import {AvaliacaoPesquisaPageModule,} from "../pages/avaliacao-pesquisa/avaliacao-pesquisa.module";
 import {SelecaoClientesPageModule} from "../pages/selecao-clientes/selecao-clientes.module";
 
 
@@ -30,7 +30,7 @@ import {SelecaoClientesPageModule} from "../pages/selecao-clientes/selecao-clien
     IonicModule.forRoot(MyApp),
     BooksLazyModule,
     AvaliacaoPageModule,
-    CalculoDeMetaPageModule,
+    AvaliacaoPesquisaPageModule,
     SelecaoClientesPageModule,
     SharedModule,
     MaterialModule,

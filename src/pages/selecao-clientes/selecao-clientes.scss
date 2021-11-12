@@ -1,122 +1,130 @@
-page-selecao-clientes {
-  .texto-cabecalho {
-    height: 32px;
-    font-size: 20px;
-    color: #212121;
-  }
 
-.alturaContext1{
+.alturaContext1 {
   min-height: 482px;
-  overflow: hidden;
+  overflow-x: hidden;
+
+  .scroll-content {
+    right: -15px !important;
+    overflow-y: auto;
+  }
+}
+
+page-selecao-clientes {
+}
+
+.texto-cabecalho {
+  height: 32px;
+  font-size: 20px;
+  color: #212121;
 }
 
 
-  .backgroundAba {
-    //position: static;
-    //width: auto;
-    //height: 100%;
-    //left: 0;
-    //top: 0;
+.backgroundAba {
+  //position: static;
+  //width: auto;
+  //height: 100%;
+  //left: 0;
+  //top: 0;
 
-    background: #eceff1;
-  }
-
-  .backgroundCampo {
-    background: #ffffff;
-    height: auto;
-    margin-bottom: 16px;
-  }
-
-  #botao-salvar {
-    height: 32px;
-    padding-top: 0px;
-
-    /* blue-grey/blue-grey */
-
-    background: #607d8b;
-    border-radius: 4px;
-
-    text-transform: uppercase;
-  }
-
-  #headerAba {
-    align-items: center;
-    width: 100%;
-    line-height: 40px;
-  }
-
-  .inputFieldNome {
-    background: #eeeeee !important;
-  }
-
-  .inputSelectSetor {
-    background-color: white !important;
-    background: #eeeeee;
-  }
-
-  .botao-limpar {
-    position: static;
-    width: 89px;
-    height: 32px;
-    left: 1027px;
-    top: 0px;
-
-    /* blue-grey/blue-grey */
-
-    color: #b6c7cf;
-    border-radius: 4px;
-
-    text-transform: uppercase;
-  }
-
-  .botao-filtrar {
-    position: static;
-    width: 89px;
-    height: 32px;
-    left: 1027px;
-    top: 0px;
-
-    color: #607d8b;
-    border-radius: 4px;
-
-    text-transform: uppercase;
-  }
-
-  .wrapper {
-    transition: 0.2s linear;
-  }
-
-  .collapsed {
-    height: 0 !important;
-  }
-
-  .background-tabela {
-    background: #ffffff;
-    margin-top: 18px !important;
-  }
-
-  #label-tabela {
-    font-size: 16px;
-    line-height: 24px;
-  }
-
-  .botao-maxMin {
-    background-color: #eeeeee !important;
-    height: 35px;
-    width: 100px;
-    text-align: center;
-  }
-
-  .borda-tabela {
-    border-bottom: groove;
-  }
-
-  .background-filtros {
-    background-color: #eeeeee;
-    width: 65px;
-  }
-
-  textarea {
-    resize: vertical;
-  }
+  background: #eceff1;
 }
+
+.backgroundCampo {
+  background: #ffffff;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+#botao-salvar {
+  height: 32px;
+  padding-top: 0px;
+
+  /* blue-grey/blue-grey */
+
+  background: #607d8b;
+  border-radius: 4px;
+
+  text-transform: uppercase;
+}
+
+#headerAba {
+  align-items: center;
+  width: 100%;
+  line-height: 40px;
+}
+
+.inputFieldNome {
+  background: #eeeeee !important;
+}
+
+.inputSelectSetor {
+  background-color: white !important;
+  background: #eeeeee;
+}
+
+.botao-limpar {
+  position: static;
+  width: 89px;
+  height: 32px;
+  left: 1027px;
+  top: 0px;
+
+  /* blue-grey/blue-grey */
+
+  color: #b6c7cf;
+  border-radius: 4px;
+
+  text-transform: uppercase;
+}
+
+.botao-filtrar {
+  position: static;
+  width: 89px;
+  height: 32px;
+  left: 1027px;
+  top: 0px;
+
+  color: #607d8b;
+  border-radius: 4px;
+
+  text-transform: uppercase;
+}
+
+.wrapper {
+  transition: 0.2s linear;
+}
+
+.collapsed {
+  height: 0 !important;
+}
+
+.background-tabela {
+  background: #ffffff;
+  margin-top: 18px !important;
+}
+
+#label-tabela {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.botao-maxMin {
+  background-color: #eeeeee !important;
+  height: 35px;
+  width: 100px;
+  text-align: center;
+}
+
+.borda-tabela {
+  border-bottom: groove;
+}
+
+.background-filtros {
+  background-color: #eeeeee;
+  width: 65px;
+}
+
+textarea {
+  resize: vertical;
+}
+
