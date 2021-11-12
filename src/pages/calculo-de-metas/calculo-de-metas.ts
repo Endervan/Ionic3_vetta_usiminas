@@ -27,7 +27,9 @@ export class CalculoDeMetasPage {
   dataSourceGeral = new MatTableDataSource(ELEMENT_DATA1);
   dataSourceGeral2 = new MatTableDataSource(ELEMENT_DATA2);
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator) paginator2: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatSort) sort2: MatSort;
 
   elaboracao: FormGroup;
   panelOpenState: boolean = false;
@@ -39,8 +41,8 @@ export class CalculoDeMetasPage {
   ngAfterViewInit() {
     this.dataSourceGeral.paginator = this.paginator;
     this.dataSourceGeral.sort = this.sort;
-    this.dataSourceGeral2.paginator = this.paginator;
-    this.dataSourceGeral2.sort = this.sort;
+    this.dataSourceGeral2.paginator = this.paginator2;
+    this.dataSourceGeral2.sort = this.sort2;
   }
 
   ngOnInit(): void {
@@ -70,7 +72,7 @@ const ELEMENT_DATA1: CalculoMetas[] = [
 
 // parte local teste
 const ELEMENT_DATA2: CalculoMetas[] = [
-  {nome: 'FIAT', ultimaParticipacao: 2021, nota: 91.9, comparacao: -1.7},
+  {nome: 'FIAT', ultimaParticipacao: 2050, nota: 91.9, comparacao: -1.7},
   {nome: 'Toyota', ultimaParticipacao: 2021, nota: 93.9, comparacao: 'Exclusivo'},
   {nome: 'Honda', ultimaParticipacao: 2021, nota: 71.9, comparacao: 11.9},
 
