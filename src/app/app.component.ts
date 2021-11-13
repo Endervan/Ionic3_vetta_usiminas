@@ -2,13 +2,15 @@ import {Component} from '@angular/core';
 import {Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
+import {AvaliacaoPage} from "../pages/avaliacao/avaliacao";
 import {AvaliacaoPesquisaPage} from "../pages/avaliacao-pesquisa/avaliacao-pesquisa";
+import {BooksLazyPage} from "../pages/books-lazyLoadig/booksLazy";
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage: any = AvaliacaoPesquisaPage;
+  rootPage: any = BooksLazyPage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

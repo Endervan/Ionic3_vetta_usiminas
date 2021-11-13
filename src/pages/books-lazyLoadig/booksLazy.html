@@ -8,46 +8,30 @@
 
 </ion-header>
 
+
 <ion-content padding>
-  <h2>Multi-row toolbar</h2>
+  <h6>Inputs  renderização css  componentizado </h6>
+  <form autocomplete="off" novalidate  [formGroup]="cadastroForm"  (reset)="reiniciarForm()" action="">
+    <app-input-text titulo="Titulo *" controlName="titulo" [formGroup]="cadastroForm"></app-input-text>
+    <app-input-date titulo="Data *" controlName="calendario" [formGroup]="cadastroForm"></app-input-date>
+    <app-input-textarea titulo="Text Area " controlName="descricao" [formGroup]="cadastroForm"></app-input-textarea>
+    <app-input-number titulo="Nota *" step="0.1" controlName="numero" [formGroup]="cadastroForm"></app-input-number>
+    <app-input-select titulo="Gênero * "  [opcoes]="pesquisas" controlName="pesquisasForm" [formGroup]="cadastroForm"></app-input-select>
 
-  <mat-toolbar color="primary">
-    <h2>Multi-row toolbar</h2>
+    <mat-card-actions>
+      <button type="submit"   [disabled]="!cadastroForm.valid" color="accent" mat-raised-button>Salvar</button>
+      <button type="reset" color="warn" mat-raised-button>Cancelar</button>
+    </mat-card-actions>
+  </form>
 
-    <mat-toolbar color="primary">
-      <mat-toolbar-row>
-        <span>Custom Toolbar</span>
-      </mat-toolbar-row>
-
-      <mat-toolbar-row>
-        <span>Second Line</span>
-        <span class="example-spacer"></span>
-        <mat-icon class="example-icon">verified_user</mat-icon>
-      </mat-toolbar-row>
-
-      <mat-toolbar-row>
-        <span>Third Line</span>
-        <span class="example-spacer"></span>
-        <mat-icon class="example-icon">favorite</mat-icon>
-        <mat-icon class="example-icon">delete</mat-icon>
-      </mat-toolbar-row>
-    </mat-toolbar>
-
-  </mat-toolbar>
+  <button class="alertCustom" ion-button (click)="modalMaterial()">Modal Personalizado</button>
+  <button ion-button (click)="alertIonic()">Alert Personalizado</button>
+  <button ion-button (click)="loadingIonic()">Loading Personalizado</button>
+  <button ion-button (click)="toastIonic()">Toast Personalizado</button>
+  <button ion-button (click)="testeNavegacao()">ir para home</button>
 
 
-    <h2>Basic datepicker</h2>
-    <input matInput [matDatepicker]="picker" placeholder="Insira uma data">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-<!--  <form autocomplete="off" novalidate [formGroup]="cadastro" action="">-->
-    <app-input-date titulo="Data de Lançamento * "></app-input-date>
-<!--  </form>-->
 
-  <h1>datetime ionic 3</h1>
-  <ion-item col-2>
-    <ion-label>MMMM</ion-label>
-    <ion-datetime  displayFormat="MMMM"></ion-datetime>
-  </ion-item>
+
 
 </ion-content>

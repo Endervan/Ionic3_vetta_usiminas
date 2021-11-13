@@ -21,9 +21,9 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
 })
 export class InputDateComponent {
 
-  @Input() titulo: string;
-  @Input() formGroup: FormGroup;
-  @Input() controlName: string;
+  @Input() titulo?: string;
+  @Input() formGroup?: FormGroup;
+  @Input() controlName?: string;
   // @Input() startView?: 'month' | 'year'
 
 
