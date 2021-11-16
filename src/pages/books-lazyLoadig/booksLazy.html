@@ -16,7 +16,7 @@
     <app-input-date titulo="Data *" controlName="calendario" [formGroup]="cadastroForm"></app-input-date>
     <app-input-textarea titulo="Text Area " controlName="descricao" [formGroup]="cadastroForm"></app-input-textarea>
     <app-input-number titulo="Nota *" step="0.1" controlName="numero" [formGroup]="cadastroForm"></app-input-number>
-    <app-input-select titulo="Gênero * "  [opcoes]="pesquisas" controlName="pesquisasForm" [formGroup]="cadastroForm"></app-input-select>
+    <app-input-select titulo="Gênero * " multiple="false"   [opcoes]="pesquisas" controlName="pesquisasForm" [formGroup]="cadastroForm"></app-input-select>
 
     <mat-card-actions>
       <button type="submit"   [disabled]="!cadastroForm.valid" color="accent" mat-raised-button>Salvar</button>

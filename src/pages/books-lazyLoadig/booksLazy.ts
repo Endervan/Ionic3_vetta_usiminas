@@ -55,7 +55,31 @@ export class BooksLazyPage implements OnInit {
   }
 
   async alertIonic(): Promise<void> {
-    await this.genericoService.alert({message: 'teste alert ionic 3', buttons: ['OK'], title: 'resolve'}); //  msg erro
+    await this.genericoService.alert({
+      title: 'salombi cara de mimi', message: 'teste alert ionic 3',
+      inputs: [{
+        name: 'digite',
+        type: 'textarea',
+        placeholder: 'Informe motivo da exclusão'
+      }],
+      buttons: [
+        {
+          text: 'OK',
+          role: 'cancel',
+          cssClass: 'meu-css',
+          handler: (value: any) => {
+            console.log("OK")
+          }
+        }, {
+          text: 'Sair',
+          role: 'cancel',
+          cssClass: 'meu-css-cancel',
+          handler: (value: any) => {
+            console.log('Sair')
+          }
+        }
+      ]
+    }); //  msg erro
   }
 
   async loadingIonic(): Promise<void> {
