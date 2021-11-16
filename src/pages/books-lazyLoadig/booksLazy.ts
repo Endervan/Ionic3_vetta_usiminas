@@ -44,8 +44,8 @@ export class BooksLazyPage implements OnInit {
     const config = {
       data: {
         btnSucesso: 'Ir para alguma pagina',
-        btnCancelar: 'Fechar',
-        corBntCancelar: 'warn',
+        btnCancelar: 'sair',
+        corBntCancelar: 'danger',
         possuirBtnFechar: true
       } as Alert,
       panelClass: 'alertCustom'
