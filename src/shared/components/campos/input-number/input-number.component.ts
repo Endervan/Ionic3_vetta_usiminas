@@ -6,7 +6,7 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
   selector: 'app-input-number',
   template:`
     <div [formGroup]="formGroup">
-        <mat-form-field class="full-width">
+        <mat-form-field class="full_widthPersonalite">
             <input matInput
                 type="number"
                 [min]="minimo"

@@ -5,7 +5,7 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
 @Component({
   selector: 'app-input-date',
   template: `<div [formGroup]="formGroup">
-    <mat-form-field class="full-width">
+    <mat-form-field class="full_widthPersonalite">
       <input matInput
              [matDatepicker]="picker"
              [placeholder]="titulo"

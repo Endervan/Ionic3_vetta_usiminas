@@ -1,37 +1,41 @@
 import {Component, ViewChild} from '@angular/core';
 import {IonicPage, NavController, NavParams} from 'ionic-angular';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatTableDataSource} from "@angular/material/table";
 import {CalculoMetas} from "../../shared/models/calculoMetas";
 import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 
 
-@IonicPage({
-  name:'metas',
-  segment:'metas'
-})
+@IonicPage()
 @Component({
   selector: 'page-calculo-de-metas',
   templateUrl: 'calculo-de-metas.html',
 })
 export class CalculoDeMetasPage {
+
+  cadastroForm: FormGroup;
+
+
   info1: string = 'Informações gerais';
   info2: string = 'Seleção de clientes';
   info3: string = 'Cálculo de meta';
   info4: string = 'Cronograma';
-  displayedColumns = ['melhoria', 'nota', 'comparacao'];
-  displayedColumns1 = ['nome', 'ultimaParticipacao', 'nota', 'comparacao'];
-  displayedColumns2 = ['nome', 'ultimaParticipacao', 'nota', 'comparacao'];
-  dataSourceMelhoria = new MatTableDataSource(ELEMENT_DATA);
-  dataSourceGeral = new MatTableDataSource(ELEMENT_DATA1);
-  dataSourceGeral2 = new MatTableDataSource(ELEMENT_DATA2);
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatPaginator) paginator2: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatSort) sort2: MatSort;
 
-  elaboracao: FormGroup;
+  columnsMelhorias = ['melhoria', 'nota', 'comparacao'];
+  dataSourceMelhoria = new MatTableDataSource(ELEMENT_DATA);
+
+  columnsGerais = ['nome', 'ultimaParticipacao', 'nota', 'comparacao'];
+
+  dataSourceAutomitivo = new MatTableDataSource(ELEMENT_DATA1);
+  @ViewChild('sortAutomotivo') sortAutomotivo: MatSort;
+  @ViewChild(MatPaginator) paginatorAutomotivo: MatPaginator;
+
+
+  dataSourceAutopartes = new MatTableDataSource(ELEMENT_DATA2);
+  @ViewChild(MatPaginator) paginatorAutopartes: MatPaginator;
+  @ViewChild('sortAutopartes') sortAutopartes: MatSort;
+
   panelOpenState: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private fb: FormBuilder) {
@@ -39,15 +43,16 @@ export class CalculoDeMetasPage {
 
   // garante a inicializacao do paginacao antes de view iniciar
   ngAfterViewInit() {
-    this.dataSourceGeral.paginator = this.paginator;
-    this.dataSourceGeral.sort = this.sort;
-    this.dataSourceGeral2.paginator = this.paginator2;
-    this.dataSourceGeral2.sort = this.sort2;
+    this.dataSourceAutomitivo.paginator = this.paginatorAutomotivo;
+    this.dataSourceAutomitivo.sort = this.sortAutomotivo;
+
+    this.dataSourceAutopartes.paginator = this.paginatorAutopartes;
+    this.dataSourceAutopartes.sort = this.sortAutopartes;
   }
 
   ngOnInit(): void {
-    this.elaboracao = this.fb.group({
-      date: [''],
+    this.cadastroForm = this.fb.group({
+      descricao: ['',[Validators.minLength(10)]],
     });
   }
 
@@ -66,7 +71,7 @@ const ELEMENT_DATA: CalculoMetas[] = [
 const ELEMENT_DATA1: CalculoMetas[] = [
   {nome: 'FIAT', ultimaParticipacao: 2021, nota: 91.9, comparacao: -1.7},
   {nome: 'Toyota', ultimaParticipacao: 2021, nota: 93.9, comparacao: 'Exclusivo'},
-  {nome: 'Honda', ultimaParticipacao: 2021, nota: 71.9, comparacao: 11.9},
+  {nome: 'Honda', ultimaParticipacao: 2018, nota: 71.9, comparacao: 11.9},
 
 ];
 

@@ -1,6 +1,3 @@
-
-
-
 <ion-content class="calculoMetas">
 
   <mat-toolbar>
@@ -22,11 +19,14 @@
 
     <ng-container matColumnDef="comparacao">
       <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+      <mat-cell *matCellDef="let element">
+        <app-input-textarea titulo="Text Area " controlName="descricao" [formGroup]="cadastroForm"></app-input-textarea>
+        {{element.comparacao}}
+      </mat-cell>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    <mat-header-row *matHeaderRowDef="columnsMelhorias"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsMelhorias;"></mat-row>
   </mat-table>
 
   <mat-accordion class="titulo_acordion">
@@ -45,27 +45,27 @@
         </mat-toolbar-row>
       </mat-toolbar>
 
-      <mat-table [dataSource]="dataSourceGeral">
+      <mat-table  #sortAutomotivo="matSort" [dataSource]="dataSourceAutomitivo" matSort>
         <ng-container matColumnDef="nome">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="ultimaParticipacao">
-          <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element"><i class="fa fa-circle"
-                                                 aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="nota">
-          <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="comparacao">
-          <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
         </ng-container>
-        <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+        <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
       </mat-table>
 
       <!--inclindo o controle de paginação.-->
@@ -89,36 +89,38 @@
         </mat-toolbar-row>
       </mat-toolbar>
 
-      <mat-table [dataSource]="dataSourceGeral2">
+      <mat-table #sortAutopartes="matSort" [dataSource]="dataSourceAutopartes" matSort>
 
         <ng-container matColumnDef="nome">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="ultimaParticipacao">
-          <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
           <mat-cell *matCellDef="let element">
             <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nota">
-          <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="comparacao">
-          <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
         </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
+        <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
 
         <!--inclindo o controle de paginação.-->
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
-                       aria-label="Itens por Pagínas"></mat-paginator>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                       showFirstLastButtons
+                       aria-label="Itens por Pagínas">
+        </mat-paginator>
       </mat-table>
 
 
@@ -138,32 +140,32 @@
         </mat-toolbar-row>
       </mat-toolbar>
 
-      <mat-table [dataSource]="dataSourceGeral">
+      <mat-table [dataSource]="dataSourceGeral2" matSort>
 
         <ng-container matColumnDef="nome">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="ultimaParticipacao">
-          <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element"><i class="fa fa-circle"
-                                                 aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nota">
-          <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="comparacao">
-          <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
         </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+        <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
 
         <!--inclindo o controle de paginação.-->
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
@@ -187,32 +189,32 @@
         </mat-toolbar-row>
       </mat-toolbar>
 
-      <mat-table [dataSource]="dataSourceGeral">
+      <mat-table [dataSource]="dataSourceGeral2" matSort>
 
         <ng-container matColumnDef="nome">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="ultimaParticipacao">
-          <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element"><i class="fa fa-circle"
-                                                 aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nota">
-          <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="comparacao">
-          <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
         </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+        <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
 
         <!--inclindo o controle de paginação.-->
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
@@ -236,32 +238,32 @@
         </mat-toolbar-row>
       </mat-toolbar>
 
-      <mat-table [dataSource]="dataSourceGeral">
+      <mat-table [dataSource]="dataSourceGeral2" matSort>
 
         <ng-container matColumnDef="nome">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="ultimaParticipacao">
-          <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element"><i class="fa fa-circle"
-                                                 aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nota">
-          <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="comparacao">
-          <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
         </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+        <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
 
         <!--inclindo o controle de paginação.-->
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
@@ -285,32 +287,32 @@
         </mat-toolbar-row>
       </mat-toolbar>
 
-      <mat-table [dataSource]="dataSourceGeral">
+      <mat-table [dataSource]="dataSourceGeral2" matSort>
 
         <ng-container matColumnDef="nome">
-          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="ultimaParticipacao">
-          <mat-header-cell *matHeaderCellDef>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element"><i class="fa fa-circle"
-                                                 aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nota">
-          <mat-header-cell *matHeaderCellDef>Nota</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="comparacao">
-          <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
           <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
         </ng-container>
 
-        <mat-header-row *matHeaderRowDef="displayedColumns1"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns1;"></mat-row>
+        <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
         <!--inclindo o controle de paginação.-->
         <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
                        aria-label="Itens por Pagínas"></mat-paginator>

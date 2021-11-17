@@ -6,7 +6,7 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
   selector: 'app-input-select',
   template: `
     <div [formGroup]="formGroup">
-      <mat-form-field class="full-width">
+      <mat-form-field class="full_widthPersonalite">
         <mat-select
           [multiple]="multiple"
           [placeholder]="titulo"
@@ -17,10 +17,11 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
         </mat-select>
         <mat-error *ngIf="validacao.hasError(formControl,'required')">Obrigátorio</mat-error>
       </mat-form-field>
-    </div> `
+    </div> `,
 })
 export class InputSelectComponent {
   @Input() multiple: boolean
+  @Input() withCss: string;
   @Input() titulo: string;
   @Input() formGroup: FormGroup;
   @Input() controlName: string;

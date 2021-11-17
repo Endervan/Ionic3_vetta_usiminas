@@ -12,7 +12,7 @@ import {GenericaService} from "../../services/generico.service";
   selector: 'page-books',
   templateUrl: 'booksLazy.html',
 })
-export class BooksLazyPage implements OnInit {
+export class BooksLazyPage {
   cadastroForm: FormGroup;
   pesquisas: Array<string>;
 
@@ -43,7 +43,7 @@ export class BooksLazyPage implements OnInit {
   modalMaterial() {
     const config = {
       data: {
-        btnSucesso: 'Ir para alguma pagina',
+        btnSucesso: 'Ir para alguma Pagina',
         btnCancelar: 'sair',
         corBntCancelar: 'danger',
         possuirBtnFechar: true

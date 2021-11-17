@@ -6,7 +6,7 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
   selector: 'app-input-text',
   template: `
     <div [formGroup]="formGroup">
-      <mat-form-field class="full-width">
+      <mat-form-field class="full_widthPersonalite">
         <input matInput
                [placeholder]="titulo"
                [name]="controlName"
@@ -19,7 +19,6 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
           Campo Deve ter Máximo {{validacao.lenghtValidar(formControl,'maxlength')}} Caracteres
         </mat-error>
       </mat-form-field>
-
     </div>
   `
 })
