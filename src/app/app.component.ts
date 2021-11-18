@@ -3,6 +3,8 @@ import {Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
 import {AvaliacaoPesquisaPage} from "../pages/avaliacao-pesquisa/avaliacao-pesquisa";
+import {HomePage} from "../pages/home/home";
+import {BooksPage} from "../pages/books/books";
 
 @Component({
   templateUrl: 'app.html'
@@ -15,6 +17,10 @@ export class MyApp {
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  irHome(){
+    this.rootPage=BooksPage;
   }
 }
 

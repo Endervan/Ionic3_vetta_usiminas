@@ -3,6 +3,11 @@ export interface CalculoMetas {
   nota?: number;
   comparacao?: string | number;
   nome?: string;
-  ultimaParticipacao?: number;
+  ultimaParticipacao?: number | string;
+  ultimaNota?: number;
+  setor?: string;
+  dataDaVisita?: number| string;
+  localizacao?: string;
+
 }
 

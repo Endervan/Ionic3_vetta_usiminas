@@ -11,6 +11,7 @@ import {InputNumberComponent} from "./components/campos/input-number/input-numbe
 import {InputSelectComponent} from "./components/campos/input-select/input-select.component";
 import {InputTextareaComponent} from "./components/campos/input-textArea/input-textarea.component";
 import {InputTextComponent} from "./components/campos/input-text/input-text.component";
+import {TabelaComponent} from "./components/campos/tabela/tabela.component";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {InputTextComponent} from "./components/campos/input-text/input-text.comp
     InputSelectComponent,
     InputTextareaComponent,
     InputTextComponent,
+    TabelaComponent,
   ],
   imports: [
     FormsModule,
@@ -33,7 +35,8 @@ import {InputTextComponent} from "./components/campos/input-text/input-text.comp
     InputNumberComponent,
     InputSelectComponent,
     InputTextareaComponent,
-    InputTextComponent
+    InputTextComponent,
+    TabelaComponent,
   ],
   entryComponents: [
     AlertComponent,

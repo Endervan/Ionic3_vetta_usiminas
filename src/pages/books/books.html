@@ -22,7 +22,7 @@
 
       <ng-container matColumnDef="avaliacao">
         <mat-header-cell *matHeaderCellDef>Avaliação</mat-header-cell>
-        <mat-cell id="destaque" *matCellDef="let element"> {{element.avaliacao}} </mat-cell>
+        <mat-cell id="destaque" *matCellDef="let element"> {{element.avaliacao | date:'YYYY' }} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="ciclo">
@@ -55,7 +55,7 @@
 
          <ng-template #andamento>
            <button  item-start id="status_button_andamento" mat-button>
-             {{element.status}}
+             {{!element.status || 'Em Andamento'}}
            </button>
          </ng-template>
 

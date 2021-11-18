@@ -1,5 +1,5 @@
 export interface Pesquisas {
-  avaliacao?: number;
+  avaliacao?: number | string;
   ciclo?: number;
   clientes?: number;
   responsavel?: string;

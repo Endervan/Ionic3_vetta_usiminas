@@ -80,7 +80,7 @@
 }
 
 .mat-toolbar {
-  background: #FFFFFF;
+  background: #FFFFFF !important;
   font-weight: 400;
   font-size: 16px;
 
@@ -160,29 +160,14 @@
     font-size: 16px;
   }
 
-  .mat-toolbar {
-    background: #FFFFFF;
-  }
+
 
   .mat-header-row, .mat-row {
     border-bottom-width: 2px;
   }
 }
 
-.calculoMetas {
-  min-height: 482px;
-  overflow-x: hidden;
 
-  .scroll-content {
-    right: -15px !important;
-    overflow-y: auto;
-  }
-
-  .mat-tab-body-content {
-    height: 0 !important;
-    overflow: hidden !important;
-  }
-}
 
 
 

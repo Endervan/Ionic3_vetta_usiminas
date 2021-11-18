@@ -15,6 +15,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {AvaliacaoPageModule} from "../pages/avaliacao/avaliacao.module";
 import {AvaliacaoPesquisaPageModule,} from "../pages/avaliacao-pesquisa/avaliacao-pesquisa.module";
 import {SelecaoClientesPageModule} from "../pages/selecao-clientes/selecao-clientes.module";
+import {CronogramaPageModule} from "../pages/cronograma/cronograma.module";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import {SelecaoClientesPageModule} from "../pages/selecao-clientes/selecao-clien
     BooksLazyModule,
     AvaliacaoPageModule,
     AvaliacaoPesquisaPageModule,
+    CronogramaPageModule,
     SelecaoClientesPageModule,
     SharedModule,
     MaterialModule,

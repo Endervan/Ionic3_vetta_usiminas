@@ -6,19 +6,21 @@ import {InformacoesGeraisPageModule} from "../informacoes-gerais/informacoes-ger
 import {SelecaoClientesPageModule} from "../selecao-clientes/selecao-clientes.module";
 import {CalculoDeMetasPageModule} from "../calculo-de-metas/calculo-de-metas.module";
 import {AvaliacaoPesquisaPage} from "./avaliacao-pesquisa";
+import {CronogramaPageModule} from "../cronograma/cronograma.module";
 
 @NgModule({
   declarations: [
     AvaliacaoPesquisaPage,
   ],
-  imports: [
-    IonicPageModule.forChild(AvaliacaoPesquisaPage),
-    MaterialModule,
-    SharedModule,
-    InformacoesGeraisPageModule,
-    SelecaoClientesPageModule,
-    CalculoDeMetasPageModule,
-  ],
+    imports: [
+        IonicPageModule.forChild(AvaliacaoPesquisaPage),
+        MaterialModule,
+        SharedModule,
+        InformacoesGeraisPageModule,
+        SelecaoClientesPageModule,
+        CalculoDeMetasPageModule,
+        CronogramaPageModule,
+    ],
 })
 export class AvaliacaoPesquisaPageModule {
 }

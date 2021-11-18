@@ -1,5 +1,5 @@
 import {Component, ViewChild} from '@angular/core';
-import {NavParams} from 'ionic-angular';
+import {IonicPage, NavParams} from 'ionic-angular';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
 import {AlertComponent} from "../../shared/components/campos/alert/alert.component";
@@ -105,7 +105,7 @@ export class BooksPage {
 
 // parte local teste
 const ELEMENT_DATA: Pesquisas[] = [
-  {avaliacao: 2021, ciclo: 25, clientes: 60, responsavel: 'Daniel', media: 0, status: 'Em Andamento'},
+  {avaliacao: '10/11/2021', ciclo: 25, clientes: 60, responsavel: 'Daniel', media: 0, status: 'EmAndamento'},
   {avaliacao: 2020, ciclo: 24, clientes: 45, responsavel: 'josue', media: 10.5, status: 'Concluida'},
   {avaliacao: 2019, ciclo: 23, clientes: 30, responsavel: 'Daniel', media: 10.5, status: 'Concluida'},
   {avaliacao: 2018, ciclo: 22, clientes: 5, responsavel: 'Daniel', media: 10.5, status: 'Concluida'},

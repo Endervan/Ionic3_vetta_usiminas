@@ -1,0 +1,56 @@
+<ion-content padding class="cronograma">
+
+  <ion-row align-items-end>
+    <ion-col>
+      <h1>Cronograma</h1>
+    </ion-col>
+    <ion-col col-9 text-right class="pr0">
+      <button ion-button outline>
+        <i class="fa fa-bar-chart mr10" aria-hidden="true"></i>
+        Mostrar relatório
+      </button>
+      <button ion-button color="grey">SALVAR</button>
+    </ion-col>
+  </ion-row>
+
+  <mat-table #sortCronograma="matSort" [dataSource]="dataSourceCronograma" matSort>
+    <ng-container matColumnDef="nome">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Nome</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.nome}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="setor">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Setor</mat-header-cell>
+      <mat-cell *matCellDef="let row"> {{row.setor}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ultimaNota">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Última Nota</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.ultimaNota}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="ultimaParticipacao">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
+      <mat-cell *matCellDef="let row">{{row.ultimaParticipacao}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="dataDaVisita">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Data da Visita</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <app-input-date titulo="Data da Visita"  controlName="date" [formGroup]="cronograma"></app-input-date>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="localizacao">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Localização</mat-header-cell>
+      <mat-cell class="rl" *matCellDef="let row">
+        <app-input-select titulo="Selecione a(s) Localidade(s)" multiple="true" [opcoes]="cronogramaSelect"
+                          controlName="cronograma" [formGroup]="cronograma">
+        </app-input-select>
+        <i class="fa fa-map-marker" aria-hidden="true"></i>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
+  </mat-table>
+
+  <!--inclindo o controle de paginação.-->
+  <mat-paginator [pageSizeOptions]="[4, 10, 20]" showFirstLastButtons aria-label="Itens por Pagínas"></mat-paginator>
+
+  <app-tabela [dataSource]="dataTeste"></app-tabela>
+</ion-content>

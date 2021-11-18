@@ -25,37 +25,18 @@
     </ion-col>
     <ion-col class="fundo_geral">
       <mat-tab-group>
-
         <mat-tab label="{{info1}}">
           <page-informacoes-gerais></page-informacoes-gerais>
         </mat-tab>
-
         <mat-tab label="{{info2}}">
           <page-selecao-clientes></page-selecao-clientes>
         </mat-tab>
-
         <mat-tab label="{{info3}}">
+          <h1>{{info3}}</h1>
           <page-calculo-de-metas></page-calculo-de-metas>
         </mat-tab>
-
         <mat-tab label="{{info4}}">
-          <h1>{{info4}}</h1>
-          <mat-toolbar>
-            <mat-toolbar-row>
-              <span>Data da avaliação:</span>
-              <h3>10/03/2022</h3>
-            </mat-toolbar-row>
-            <mat-toolbar-row>
-              <span>Data de recebimento do relatório:</span>
-              <h3>25/03/2022</h3>
-            </mat-toolbar-row>
-            <mat-toolbar-row>
-              <app-input-date titulo="Data de elaboração do plano"
-                              controlName="date"
-                              [formGroup]="elaboracao">
-              </app-input-date>
-            </mat-toolbar-row>
-          </mat-toolbar>
+          <page-cronograma></page-cronograma>
         </mat-tab>
 
 

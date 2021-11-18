@@ -66,3 +66,33 @@ i[class^="fa-"], ion-icon[class^="fa-"] {
     border-bottom: 1px solid #eeeeee;
   }
 }
+
+.calculoMetas {
+  min-height: 482px;
+  overflow-x: hidden;
+
+  .scroll-content {
+    right: -15px !important;
+    overflow-y: auto;
+  }
+
+  .mat-tab-body-content {
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+}
+
+.pr0{
+  padding-right: 0;
+}
+
+.mr10{
+  margin-right: 10px;
+}
+
+.rl{
+  position: relative;
+}
+
+
+

@@ -20,7 +20,6 @@
     <ng-container matColumnDef="comparacao">
       <mat-header-cell *matHeaderCellDef>Comparação com concorrente</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <app-input-textarea titulo="Text Area " controlName="descricao" [formGroup]="cadastroForm"></app-input-textarea>
         {{element.comparacao}}
       </mat-cell>
     </ng-container>
@@ -48,21 +47,21 @@
       <mat-table  #sortAutomotivo="matSort" [dataSource]="dataSourceAutomitivo" matSort>
         <ng-container matColumnDef="nome">
           <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.nome}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="ultimaParticipacao">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-cell *matCellDef="let row">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{row.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
         <ng-container matColumnDef="nota">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.nota}} </mat-cell>
         </ng-container>
         <ng-container matColumnDef="comparacao">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.comparacao}} </mat-cell>
         </ng-container>
         <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
@@ -93,35 +92,33 @@
 
         <ng-container matColumnDef="nome">
           <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.nome}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="ultimaParticipacao">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Última participação</mat-header-cell>
-          <mat-cell *matCellDef="let element">
-            <i class="fa fa-circle" aria-hidden="true"></i> {{element.ultimaParticipacao}}
+          <mat-cell *matCellDef="let row">
+            <i class="fa fa-circle" aria-hidden="true"></i> {{row.ultimaParticipacao}}
           </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="nota">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Nota</mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.nota}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.nota}} </mat-cell>
         </ng-container>
 
         <ng-container matColumnDef="comparacao">
           <mat-header-cell *matHeaderCellDef mat-sort-header>Comparação com concorrente</mat-header-cell>
-          <mat-cell *matCellDef="let element"> {{element.comparacao}} </mat-cell>
+          <mat-cell *matCellDef="let row"> {{row.comparacao}} </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="columnsGerais"></mat-header-row>
         <mat-row *matRowDef="let row; columns: columnsGerais;"></mat-row>
 
-        <!--inclindo o controle de paginação.-->
-        <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                       showFirstLastButtons
-                       aria-label="Itens por Pagínas">
-        </mat-paginator>
       </mat-table>
+
+      <!--inclindo o controle de paginação.-->
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Itens por Pagínas"></mat-paginator>
 
 
     </mat-expansion-panel>
