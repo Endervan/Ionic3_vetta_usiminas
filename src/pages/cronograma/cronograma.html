@@ -33,7 +33,7 @@
     <ng-container matColumnDef="dataDaVisita">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Data da Visita</mat-header-cell>
       <mat-cell *matCellDef="let row">
-        <app-input-date titulo="Data da Visita"  controlName="date" [formGroup]="cronograma"></app-input-date>
+        <app-input-date-mes-ano titulo="Data da Visita"  controlName="date" [formGroup]="cronograma"></app-input-date-mes-ano>
       </mat-cell>
     </ng-container>
     <ng-container matColumnDef="localizacao">

@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {InputDateComponent} from './components/campos/input-date/input-date.component';
+import {InputDateMesEAnoComponent} from './components/campos/input-date/input-dateMesEAno.component';
 import {CommonModule} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MaterialModule} from "./material/material.module";
@@ -12,9 +12,13 @@ import {InputSelectComponent} from "./components/campos/input-select/input-selec
 import {InputTextareaComponent} from "./components/campos/input-textArea/input-textarea.component";
 import {InputTextComponent} from "./components/campos/input-text/input-text.component";
 import {TabelaComponent} from "./components/campos/tabela/tabela.component";
+import {InputDateAnoComponent} from "./components/campos/input-date/input-dateAno.component";
+import {InputDateComponent} from "./components/campos/input-date/input-date.component";
 
 @NgModule({
   declarations: [
+    InputDateMesEAnoComponent,
+    InputDateAnoComponent,
     InputDateComponent,
     AlertComponent,
     InputNumberComponent,
@@ -30,6 +34,8 @@ import {TabelaComponent} from "./components/campos/tabela/tabela.component";
     ReactiveFormsModule,
   ],
   exports: [
+    InputDateMesEAnoComponent,
+    InputDateAnoComponent,
     InputDateComponent,
     AlertComponent,
     InputNumberComponent,
@@ -40,6 +46,9 @@ import {TabelaComponent} from "./components/campos/tabela/tabela.component";
   ],
   entryComponents: [
     AlertComponent,
+    InputDateMesEAnoComponent,
+    InputDateAnoComponent,
+    InputDateComponent
   ],
   providers: [
     ValidarCamposService,

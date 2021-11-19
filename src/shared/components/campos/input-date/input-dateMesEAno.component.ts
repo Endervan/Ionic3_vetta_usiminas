@@ -1,10 +1,23 @@
 import {Component, Input} from '@angular/core';
 import {AbstractControl, FormGroup} from "@angular/forms";
 import {ValidarCamposService} from "../../../../services/validar-campos.service";
+import {MAT_DATE_FORMATS} from "@angular/material/core";
+
+
+export const APP_DATE_FORMATS_MES_ANO =
+  {
+    parse: {
+      dateInput: {month: 'short', year: 'numeric', day: 'numeric'},
+    },
+    display: {
+      dateInput: {month: 'short', year: 'numeric'},
+      monthYearLabel: {year: 'numeric'}
+    }
+  };
 
 
 @Component({
-  selector: 'app-input-date',
+  selector: 'app-input-date-mes-ano',
   template: `
     <div [formGroup]="formGroup">
       <mat-form-field class="full_widthPersonalite">
@@ -20,8 +33,9 @@ import {ValidarCamposService} from "../../../../services/validar-campos.service"
         <mat-error *ngIf="validacao.hasErrorValidate(formControl,'required')">Obrigátorio</mat-error>
       </mat-form-field>
     </div>`,
+  providers: [{provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS_MES_ANO}],
 })
-export class InputDateComponent {
+export class InputDateMesEAnoComponent {
 
   minDate = new Date(2000, 0, 1);
   maxDate = new Date(2020, 12);
